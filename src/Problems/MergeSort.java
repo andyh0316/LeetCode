@@ -1,5 +1,4 @@
 package Problems;
-import Helpers.PrintHelper;
 
 public class MergeSort {
     public static int[] sortArray(int[] nums) {
