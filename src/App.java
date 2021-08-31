@@ -1,5 +1,6 @@
 import Problems.MergeSortTest;
 import Problems.MyHashMapTest;
+import Problems.MyLinkedListTest;
 import Problems.TwoSumTest;
 
 public class App {
@@ -8,7 +9,8 @@ public class App {
 
         //MergeSortTest.start();
         //MyHashMapTest.start();
-        TwoSumTest.start();
+        //TwoSumTest.start();
+        MyLinkedListTest.start();
     }
 }
  
