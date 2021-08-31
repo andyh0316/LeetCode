@@ -2,13 +2,6 @@ package Problems;
 import Helpers.PrintHelper;
 
 public class MergeSort {
-    public static void start() {
-        int[] nums = new int[] { 5, 2, 4, 1 };
-        sortArray(nums);
-
-        PrintHelper.printArray(nums);
-    }
-
     public static int[] sortArray(int[] nums) {
         if (nums == null || nums.length == 0)
             return new int[0];
