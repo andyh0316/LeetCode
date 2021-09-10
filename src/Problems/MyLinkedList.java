@@ -1,7 +1,6 @@
 package Problems;
-
+ 
 import java.lang.Object;
-
 import MyClasses.ListNode;
 
 class MyLinkedList {
