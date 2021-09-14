@@ -2,47 +2,63 @@ package Problems;
 
 public class MergeSort {
     public static int[] sortArray(int[] nums) {
-        if (nums == null || nums.length == 0)
-            return new int[0];
-        int[] temp = new int[nums.length];
-        mergeSortRecursive(nums, 0, nums.length - 1, temp);
+        int length = nums.length;
+        mergeSort(nums, 0, length - 1);
+
+        //merge(new int[] {3, 4, 1, 2}, 0, 1, 3);
         return nums;
     }
 
-    private static void mergeSortRecursive(int[] nums, int start, int end, int[] temp) {
-        if (start >= end) {
-            return;
+    // Arr is an array of integer type
+    // start and end are the starting and ending index of current interval of Arr
+
+    static void mergeSort(int Arr[], int start, int end) {
+        if (start < end) {
+            int mid = (start + end) / 2;
+            mergeSort(Arr, start, mid);
+            mergeSort(Arr, mid + 1, end);
+            merge(Arr, start, mid, end);
         }
-
-        mergeSortRecursive(nums, start, (start + end) / 2, temp);
-        mergeSortRecursive(nums, (start + end) / 2 + 1, end, temp);
-
-        merge(nums, start, end, temp);
     }
 
-    private static void merge(int[] nums, int start, int end, int[] temp) {
-        int middle = (start + end) / 2;
-        int leftStart = start, rightStart = middle + 1;
-        int index = leftStart;
+    static void merge(int Arr[], int start, int mid, int end) {
+        // create a temp array
+        int temp[] = new int[end - start + 1];
 
-        while (leftStart <= middle && rightStart <= end) {
-            if (nums[leftStart] < nums[rightStart]) {
-                temp[index++] = nums[leftStart++];
+        // crawlers for both intervals and for temp
+        int i = start, j = mid + 1, k = 0;
+
+        // traverse both arrays and in each iteration add smaller of both elements in
+        // temp
+        while (i <= mid && j <= end) {
+            if (Arr[i] <= Arr[j]) {
+                temp[k] = Arr[i];
+                k += 1;
+                i += 1;
             } else {
-                temp[index++] = nums[rightStart++];
+                temp[k] = Arr[j];
+                k += 1;
+                j += 1;
             }
         }
 
-        while (leftStart <= middle) {
-            temp[index++] = nums[leftStart++];
+        // add elements left in the first interval
+        while (i <= mid) {
+            temp[k] = Arr[i];
+            k += 1;
+            i += 1;
         }
-        while (rightStart <= end) {
-            temp[index++] = nums[rightStart++];
+
+        // add elements left in the second interval
+        while (j <= end) {
+            temp[k] = Arr[j];
+            k += 1;
+            j += 1;
         }
-        // when we finish placing merging result in the temp, we update the result array
-        // update until index end
-        for (int i = 0; i <= end; i++) {
-            nums[i] = temp[i];
+
+        // copy temp to original interval
+        for (i = start; i <= end; i += 1) {
+            Arr[i] = temp[i - start];
         }
     }
 }
