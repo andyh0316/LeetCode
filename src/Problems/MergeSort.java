@@ -4,8 +4,6 @@ public class MergeSort {
     public static int[] sortArray(int[] nums) {
         int length = nums.length;
         mergeSort(nums, 0, length - 1);
-
-        //merge(new int[] {3, 4, 1, 2}, 0, 1, 3);
         return nums;
     }
 
@@ -22,43 +20,38 @@ public class MergeSort {
     }
 
     static void merge(int Arr[], int start, int mid, int end) {
-        // create a temp array
-        int temp[] = new int[end - start + 1];
-
-        // crawlers for both intervals and for temp
         int i = start, j = mid + 1, k = 0;
 
-        // traverse both arrays and in each iteration add smaller of both elements in
-        // temp
+        int[] temp = new int[end - start + 1];
+
         while (i <= mid && j <= end) {
-            if (Arr[i] <= Arr[j]) {
+            if (Arr[i] < Arr[j]) {
                 temp[k] = Arr[i];
-                k += 1;
-                i += 1;
+
+                i++;     
             } else {
                 temp[k] = Arr[j];
-                k += 1;
-                j += 1;
+
+                j++;
             }
+
+            k++;
         }
 
-        // add elements left in the first interval
         while (i <= mid) {
             temp[k] = Arr[i];
-            k += 1;
-            i += 1;
+            i++;
+            k++;
         }
 
-        // add elements left in the second interval
         while (j <= end) {
             temp[k] = Arr[j];
-            k += 1;
-            j += 1;
+            j++;
+            k++;
         }
 
-        // copy temp to original interval
-        for (i = start; i <= end; i += 1) {
-            Arr[i] = temp[i - start];
+        for (int a = 0; a <= end - start; a++) {
+            Arr[start + a] = temp[a];
         }
     }
 }
