@@ -12,5 +12,10 @@ public class TinyUrlCodecTest {
 
         System.out.println(encodedUrl);
         System.out.println(decodedUrl);
+
+        for (int i = 0; i < 50; i++) {
+            encodedUrl = codec.encode(url);
+            System.out.println(encodedUrl);
+        }
     }
 }
