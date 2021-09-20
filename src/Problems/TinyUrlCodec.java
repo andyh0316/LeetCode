@@ -10,7 +10,7 @@ public class TinyUrlCodec {
     int count = 1;
 
     // The concept here is we take all possible 62 characters, use modular and division to produce unique combination
-    // of characters based on counter. For example:
+    // of characters based on counter. For example: if the given chars = "ABC"
     // 0 = A, 1 = B, 2 = C, 3 = AA, 4 = BA, 5 = CA, 6 = AAA, 7 = AAB, 8 = AAC
     public String getString() {
         int c = count;
