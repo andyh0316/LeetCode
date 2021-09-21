@@ -1,5 +1,6 @@
 import Problems.Base62Conversion;
 import Problems.Base62ConversionTest;
+import Problems.KthClosestPointToOriginTest;
 import Problems.KthLargestElementInArrayTest;
 import Problems.MergeSortTest;
 import Problems.MyHashMapTest;
@@ -18,7 +19,8 @@ public class App {
     public static void main(String[] args) throws Exception {
         //System.out.println("Hello, World!");
 
-        KthLargestElementInArrayTest.start();
+        KthClosestPointToOriginTest.start();
+        //KthLargestElementInArrayTest.start();
         //ReorganizeStringTest.start();
         //ThreadSafetyTest.start();
         //QuickSortTest.start();
