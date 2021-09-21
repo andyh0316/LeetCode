@@ -4,6 +4,8 @@ import Problems.MergeSortTest;
 import Problems.MyHashMapTest;
 import Problems.MyLinkedListTest;
 import Problems.QuickSortTest;
+import Problems.ThreadSafety;
+import Problems.ThreadSafetyTest;
 import Problems.TinyUrlCodecTest;
 import Problems.TwoSumTest;
 import Problems.VendingMachine;
@@ -13,7 +15,8 @@ public class App {
     public static void main(String[] args) throws Exception {
         //System.out.println("Hello, World!");
 
-        QuickSortTest.start();
+        ThreadSafetyTest.start();
+        //QuickSortTest.start();
         //VendingMachineTest.start();
         //TinyUrlCodecTest.start();
         //Base62ConversionTest.start();
