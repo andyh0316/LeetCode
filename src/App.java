@@ -1,9 +1,12 @@
 import Problems.Base62Conversion;
 import Problems.Base62ConversionTest;
+import Problems.KthLargestElementInArrayTest;
 import Problems.MergeSortTest;
 import Problems.MyHashMapTest;
 import Problems.MyLinkedListTest;
 import Problems.QuickSortTest;
+import Problems.ReorganizeString;
+import Problems.ReorganizeStringTest;
 import Problems.ThreadSafety;
 import Problems.ThreadSafetyTest;
 import Problems.TinyUrlCodecTest;
@@ -15,7 +18,9 @@ public class App {
     public static void main(String[] args) throws Exception {
         //System.out.println("Hello, World!");
 
-        ThreadSafetyTest.start();
+        KthLargestElementInArrayTest.start();
+        //ReorganizeStringTest.start();
+        //ThreadSafetyTest.start();
         //QuickSortTest.start();
         //VendingMachineTest.start();
         //TinyUrlCodecTest.start();
